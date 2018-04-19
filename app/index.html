@@ -26,24 +26,7 @@
   <!-- TO DO list of tasks-->
 
   <div class="card mb-4">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item d-flex justify-content-between">
-        <span class="task-title">Сходить за хлебушком</span>
-        <button type="button" class="btn btn-light " data-action="delete-task">Удалить</button>
-      </li>
-      <li class="list-group-item d-flex justify-content-between">
-        <span class="task-title">Посетить спортзал</span>
-        <button type="button" class="btn btn-light " data-action="delete-task">Удалить</button>
-      </li>
-      <li class="list-group-item d-flex justify-content-between">
-        <span class="task-title">Посетить вебинар</span>
-        <button type="button" class="btn btn-light " data-action="delete-task">Удалить</button>
-      </li>
-      <li class="list-group-item d-flex justify-content-between">
-        <span class="task-title">Пройти урок по web-разработке</span>
-        <button type="button" class="btn btn-light " data-action="delete-task">Удалить</button>
-      </li>
-    </ul>
+    <ul class="list-group list-group-flush" id="listOfTasks"></ul>
   </div>
   <!-- TO DO list of tasks ended -->
 
@@ -51,13 +34,15 @@
   <div class="card bg-light">
     <div class="card-header">Добавить задачу</div>
     <div class="card-body">
-      <form>
+      <form id="form-new-task">
         <div class="form-group">
           <input type="text" class="form-control" id="addNewTask"
                  placeholder="Введите текст задачи" required>
-          <small id="emailHelp" class="form-text text-muted">Что делаем, за какое время, какой результат получаем</small>
+          <small id="emailHelp" class="form-text text-muted">
+            Что делаем, за какое время, какой результат получаем
+          </small>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg active">Добавить</button>
+        <button type="submit" class="btn btn-primary btn-lg active" id="add_button">Добавить</button>
       </form>
     </div>
   </div>
@@ -71,6 +56,9 @@
         crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
+        integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
         crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
 </body>

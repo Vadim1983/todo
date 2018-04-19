@@ -15,3 +15,16 @@ body {
   font-weight: 400;
   padding-top: 5px;
 }
+.task-title-done {
+  text-decoration: line-trought;
+  color: #cdcdcd;
+}
+.gray {
+  color: #bdbdbd;
+}
+.task-item_buttons button {
+  margin-right: 5px;
+}
+.task-item_buttons button:last-child {
+  margin-right: 0px;
+}
