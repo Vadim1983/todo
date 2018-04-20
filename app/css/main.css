@@ -1,6 +1,6 @@
 body {
   background-color: #E4E5E7;
-  padding-top: 100px;
+  padding-top: 30px;
 }
 .aside {
   height: 400px;
@@ -27,4 +27,8 @@ body {
 }
 .task-item_buttons button:last-child {
   margin-right: 0px;
+}
+.notify-holder {
+  height: 60px;
+  margin-bottom: 20px;
 }
