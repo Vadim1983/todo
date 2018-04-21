@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    // New task //
     $('#form-new-task').on('submit', function (e) {
         e.preventDefault();
 
@@ -12,14 +13,15 @@ $(document).ready(function () {
         $('#listOfTasks').append($taskHolder);
         $('#addNewTask').val('');
         showNotify('new');
-
+        toggleEmptyList();
     });
 
-      // Delete Task //
+      // Delete task //
     $('#listOfTasks').on('click', '[data-action="task-delete"]', function (e) {
         e.preventDefault();
         $(this).parents('.task-item').remove();
         showNotify('delete');
+        toggleEmptyList();
     });
 
        // Done task //
@@ -54,6 +56,7 @@ $(document).ready(function () {
                 break;
         }
 
+        $('#notifyHolder .alert').fadeOut();
         $notifyBlock.hide();
         $('#notifyHolder').append($notifyBlock);
         $notifyBlock.fadeIn();
@@ -64,5 +67,19 @@ $(document).ready(function () {
             }, 1500);
         }, 1500);
     }
+
+       // toggle empty list block //
+    function toggleEmptyList(){
+
+        if( $('#listOfTasks').children().length > 1) {
+            console.log('SOME TASK');
+            $('#emptyList').hide();
+
+        } else {
+            console.log('NO TASK');
+            $('#emptyList').show();
+        }
+    }
+
 });
 
