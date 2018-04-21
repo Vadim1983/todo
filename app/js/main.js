@@ -1,19 +1,33 @@
 $(document).ready(function () {
+      var list = document.querySelector('ul');
+      var todos;
 
+    if(localStorage.getItem('todo')){
+        list.innerHTML = localStorage.getItem('todo');
+    }
+    
+      function toLocale() {
+          todos = list.innerHTML;
+          localStorage.setItem('todo', todos);
+      }
+      
     // New task //
-    $('#form-new-task').on('submit', function (e) {
+    $('#form-new-task').on('submit', function(e) {
         e.preventDefault();
-
+        var currentDate = new Date();
+        var key = 'task_' + currentDate.getTime();
         var taskText = $('#addNewTask').val();
-        var $taskHolder = $('<li class="list-group-item d-flex justify-content-between task-item">');
+        var $taskHolder = $('<li class="list-group-item d-flex justify-content-between task-item">').attr('id', key);
         var $taskTitle = $('<span class="task-title"></span>').text(taskText);
         var $taskButtons = $('<div class="task-item_buttons"><button type="button" class="btn btn-light align-self-end gray" data-action="task-done"><i class="fas fa-check"></i></button><button type="button" class="btn btn-light align-self-end gray" data-action="task-delete"><i class="far fa-trash-alt"></i></button></div>');
 
         $taskHolder.append($taskTitle).append($taskButtons);
+
         $('#listOfTasks').append($taskHolder);
         $('#addNewTask').val('');
         showNotify('new');
         toggleEmptyList();
+        toLocale();
     });
 
       // Delete task //
@@ -22,6 +36,7 @@ $(document).ready(function () {
         $(this).parents('.task-item').remove();
         showNotify('delete');
         toggleEmptyList();
+        toLocale();
     });
 
        // Done task //
@@ -29,6 +44,7 @@ $(document).ready(function () {
         e.preventDefault();
         $(this).parents('.task-item').find('.task-title').toggleClass('task-title--done');
         showNotify('done');
+        toLocale();
     });
 
       // Show Notification //
@@ -80,6 +96,7 @@ $(document).ready(function () {
             $('#emptyList').show();
         }
     }
+
 
 });
 

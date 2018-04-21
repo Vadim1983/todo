@@ -5,25 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="css/styles.css"/>
   <link rel="stylesheet" href="css/main.css"/>
   <title>ToDo приложение</title>
 </head>
 <body>
 <div class="container">
+  <div id="clock" class="light">
+    <div class="display">
+      <div class="weekdays"></div>
+      <div class="ampm"></div>
+      <div class="alarm"></div>
+      <div class="digits"></div>
+    </div>
+    <!--<div class="button-holder">-->
+      <!--<a class="button">Другая тема</a>-->
+    <!--</div>-->
+  </div>
   <div class="notify-holder" id="notifyHolder"></div>
   <div class="display-1 mb2">ToDo приложение</div>
   <div class="h4 mb-5">Список задач на сегодня</div>
 
   <!-- TO DO list of tasks-->
-
   <div class="card mb-4">
     <ul class="list-group list-group-flush" id="listOfTasks">
-    <li id="emptyList" class="list-group-item empty-list">
-      <div class="empty-list__icon">
-        <i class="fab fa-pagelines"></i>
-      </div>
-      <div class="empty-list__title">Список дел пуст</div>
-    </li>
+      <li id="emptyList" class="list-group-item empty-list">
+        <div class="empty-list__icon">
+          <i class="fab fa-pagelines"></i>
+        </div>
+        <div class="empty-list__title">Список дел пуст</div>
+      </li>
     </ul>
   </div>
   <!-- TO DO list of tasks ended -->
@@ -44,11 +55,12 @@
       </form>
     </div>
   </div>
-  <!-- TO DO form add tasks-->
+  <!-- TO DO form add tasks ended-->
 
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
@@ -58,6 +70,8 @@
 <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
         integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
         crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
 <script src="js/main.js"></script>
+
 </body>
 </html>
